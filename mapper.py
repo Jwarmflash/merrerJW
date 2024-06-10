@@ -4,7 +4,7 @@ import sys
 import re
 
 for line in sys.stdin: 
-    line = line.strip() 
-    words = line.split() 
+    words = re.split('\W',line)
     for word in words:
-        print('%s\t%s' % (word, 1))
+        if word.isalpha():
+          print('%s\t%s' % (word, 1))        
